@@ -1,0 +1,8 @@
+---
+- name: Check if get_tenant_alarms.py is existed on SCP-VMs
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: copy script file to remote server if not existed
+      copy: src=./get_tenant_alarms.py dest=/home/shared/LCMuser/
